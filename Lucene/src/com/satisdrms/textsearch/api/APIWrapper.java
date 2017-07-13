@@ -1,4 +1,4 @@
-package com.satisdrms.lucene.api;
+package com.satisdrms.textsearch.api;
 
 public class APIWrapper {
 

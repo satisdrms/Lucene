@@ -1,6 +1,6 @@
-package com.satisdrms.lucenetextsearch;
+package com.satisdrms.lucene.api;
 
-public class Lucene {
+public class APIWrapper {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

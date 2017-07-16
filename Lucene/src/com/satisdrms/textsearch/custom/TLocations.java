@@ -36,4 +36,13 @@ public class TLocations {
 		}
 
 	}
+
+	public List<Token> getTokenLocations(File f) {
+		if (f == null)
+			return null;
+		else {
+			return tokens.get(f);
+		}
+
+	}
 }

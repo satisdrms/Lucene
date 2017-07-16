@@ -1,5 +1,7 @@
 package com.satisdrms.textsearch.custom;
 
+import org.json.simple.JSONObject;
+
 public class ConvertToJSON {
 	private static ConvertToJSON instance = null;
 
@@ -13,8 +15,12 @@ public class ConvertToJSON {
 		return instance;
 	}
 
+	@SuppressWarnings("unchecked")
 	public String convert(TLocations found) {
+		JSONObject obj = new JSONObject();
 		
+		
+		System.out.println(obj.toJSONString());
 		return null;
 	}
 }

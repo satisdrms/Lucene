@@ -17,18 +17,26 @@ public class TermSearch {
 		if (indexObj.contains(term)) {
 			found = indexObj.get(term);
 			printDocs(found);
+			convertToJSONAndPrint(found);
+		} else {
+			System.out.println("The term \"" + term + "\" is not found!!");
 		}
-		else {
-			System.out.println("The term \""+term+"\" is not found!!");
-		}
-		// String jSonString=ConvertToJSON.getInstance().convert(found);
-		
+
+	}
+
+	private void convertToJSONAndPrint(TLocations found) {
+		String jSonString = ConvertToJSON.getInstance().convert(found);
+
 	}
 
 	private void printDocs(TLocations found) {
-		System.out.println("The term is found in the below locations ");
+		// System.out.println("The term is found in the below locations ");
 		for (File f : found.getFiles()) {
-			System.out.println(f.getName());
+			System.out.print("Doc_name: " + f.getName() + " occurences: ");
+			for (Token t : found.getTokenLocations(f)) {
+				System.out.print("(" + t.getTokennumber() + "," + t.getPosition() + ") ");
+			}
+			System.out.println();
 		}
 
 	}

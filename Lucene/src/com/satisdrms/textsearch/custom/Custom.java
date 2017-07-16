@@ -1,6 +1,7 @@
 package com.satisdrms.textsearch.custom;
 
 import java.io.File;
+import java.util.Calendar;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -9,8 +10,10 @@ public class Custom {
 	private static Index indexObj;
 
 	public static void main(String[] args) {
-		String inputPath = "input/temp/";
+		String inputPath = "input/stories/";
+		// System.out.println(Calendar.getInstance().getTime());
 		analyzeFiles(inputPath);
+		// System.out.println(Calendar.getInstance().getTime());
 		searchTerm();
 
 	}
@@ -18,12 +21,12 @@ public class Custom {
 	private static void searchTerm() {
 		TermSearch termSearch = new TermSearch(indexObj);
 		String term = getInput();
-		termSearch.search(term);
+		termSearch.search(term.toLowerCase());
 
 	}
 
 	private static String getInput() {
-		System.out.print("Enter the next term to search:- ");
+		System.out.print("Enter the term to search:- ");
 		Scanner sc = new Scanner(System.in);
 		return sc.nextLine();
 

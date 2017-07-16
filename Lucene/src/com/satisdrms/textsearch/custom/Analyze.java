@@ -42,7 +42,7 @@ public class Analyze implements AllPunctuations {
 			while ((line = reader.readLine()) != null) {
 				String[] terms = line.split(" ");
 				for (String s : terms) {
-					StringBuilder cleanTerm = new StringBuilder(s);
+					StringBuilder cleanTerm = new StringBuilder(s.toLowerCase());
 					removePunctuations(cleanTerm);
 					if (isATerm(cleanTerm)) {
 						indexObj.add(cleanTerm.toString(), file, pos);

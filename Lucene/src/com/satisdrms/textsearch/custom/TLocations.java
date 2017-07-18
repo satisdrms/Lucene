@@ -45,4 +45,8 @@ public class TLocations {
 		}
 
 	}
+
+	public Map<File, List<Token>> getTokens() {
+		return tokens;
+	}
 }

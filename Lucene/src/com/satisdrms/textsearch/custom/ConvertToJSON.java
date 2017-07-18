@@ -1,5 +1,8 @@
 package com.satisdrms.textsearch.custom;
 
+import java.io.IOException;
+
+import org.codehaus.jackson.map.ObjectMapper;
 import org.json.simple.JSONObject;
 
 public class ConvertToJSON {
@@ -15,12 +18,17 @@ public class ConvertToJSON {
 		return instance;
 	}
 
-	@SuppressWarnings("unchecked")
 	public String convert(TLocations found) {
-		JSONObject obj = new JSONObject();
-		
-		
-		System.out.println(obj.toJSONString());
+		// JSONObject obj = new JSONObject();
+		// System.out.println(obj.toJSONString());
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			String jsonInString = mapper.writeValueAsString(found.getTokens());
+			System.out.println(jsonInString);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 }

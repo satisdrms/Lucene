@@ -38,11 +38,9 @@ public class Token {
 	// return this.tokennumber + this.position;
 	// }
 	//
-	// @Override
-	// public String toString() {
-	// return "(" + Integer.toString(this.tokennumber) + "," +
-	// Integer.toString(this.position) + ")";
-	// }
-	//
+	@Override
+	public String toString() {
+		return "(" + Integer.toString(this.tokennumber) + "," + Integer.toString(this.position) + ")";
+	}
 
 }
